@@ -68,9 +68,34 @@ function App() {
   const successStories = [
     {
       category: 'wedding',
-      image: 'src/assets/example.jpg',
+      image: 'https://i.postimg.cc/HWN1R5m8/2025-02-12-21-26-10.jpg',
       title: 'Янка та Ілля',
       description: 'Одружилися через 3 дні після знайомства'
+    },
+    {
+      category: 'street',
+      image: 'https://i.postimg.cc/cLj40jfZ/4.jpg',
+      title: 'Просто щасливі люди',
+      description: 'Побачивши раз, вони не відводили погляд до цих пір'
+    },
+    {
+      category: 'wedding',
+      image: 'https://i.postimg.cc/V6BBMXFG/1.jpg',
+      title: 'Селена та Ален',
+      description: 'Одружилися після 2 днів відносин'
+    },
+    {
+      category: 'engagement',
+      image: 'https://i.postimg.cc/fbMbyXJT/2.jpg',
+      title: 'Юлія та Максим',
+      description: 'Максим втік від дівчини заради неї'
+    },
+    
+    {
+      category: 'petting',
+      image: 'https://i.postimg.cc/tTtwTZny/3.jpg',
+      title: 'Раналдо та Вероніка',
+      description: 'Натерли джина після місяця спілкування'
     },
     // {
     //   category: 'engagement',
@@ -98,7 +123,7 @@ function App() {
       <div className="relative h-[700px]">
         <div className="absolute inset-0">
           <img
-            src="src/assets/main.jpg"
+            src="https://i.postimg.cc/rsJZNBqr/6.jpg"
             alt="Romantic couple"
             className="w-full h-full object-cover"
           />
@@ -107,7 +132,7 @@ function App() {
         <div className="relative max-w-7xl mx-auto px-4 h-full flex items-center">
           <div className="text-white max-w-2xl">
             <h1 className="text-6xl font-bold mb-6 leading-tight">Ваше щастя починається з нами</h1>
-            <p className="text-xl mb-8 leading-relaxed">Професійне бюро знайомств з 21-річним досвідом та командою експертів-психологів. Ми допомогли створити понад 1 щасливих сімей.</p>
+            <p className="text-xl mb-8 leading-relaxed">Професійне бюро знайомств з 21-річним досвідом та командою експертів-психологів. Ми допомогли створити понад 5 щасливих сімей.</p>
             <div className="flex gap-4">
               <button 
                 onClick={() => setIsModalOpen(true)}
@@ -136,7 +161,7 @@ function App() {
               <p className="text-gray-600">Років досвіду</p>
             </div>
             <div>
-              <p className="text-4xl font-bold text-rose-600 mb-2">1+</p>
+              <p className="text-4xl font-bold text-rose-600 mb-2">5+</p>
               <p className="text-gray-600">Щасливих пар</p>
             </div>
             <div>
@@ -208,12 +233,28 @@ function App() {
               Весілля
             </button>
             <button
+              onClick={() => setActiveTab('street')}
+              className={`px-6 py-2 rounded-full ${
+                activeTab === 'street' ? 'bg-rose-600 text-white' : 'bg-gray-100 text-gray-600'
+              }`}
+            >
+              Вуличне кохання
+            </button>
+            <button
               onClick={() => setActiveTab('engagement')}
               className={`px-6 py-2 rounded-full ${
                 activeTab === 'engagement' ? 'bg-rose-600 text-white' : 'bg-gray-100 text-gray-600'
               }`}
             >
               Заручини
+            </button>
+            <button
+              onClick={() => setActiveTab('petting')}
+              className={`px-6 py-2 rounded-full ${
+                activeTab === 'petting' ? 'bg-rose-600 text-white' : 'bg-gray-100 text-gray-600'
+              }`}
+            >
+              Пєттінг
             </button>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
